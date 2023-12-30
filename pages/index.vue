@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="h-screen items-center justify-center bg-zinc-900 font-mono text-white flex">
+  <div>
     Hello, Pizza!
   </div>
 </template>
