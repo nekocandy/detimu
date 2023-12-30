@@ -15,6 +15,7 @@
     "onflow",
     "sidebase",
     "trpc",
+    "typedefs",
     "unocss",
     "vueuse"
   ],
