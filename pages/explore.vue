@@ -23,8 +23,12 @@ onMounted(async () => {
       </h1>
     </div>
 
-    <div flex flex-col gap-6>
+    <div v-if="eventsData.length > 0" flex flex-col gap-6>
       <Artist v-for="event in eventsData" :key="event.uniqueId" :event="event" />
+    </div>
+
+    <div v-else>
+      No Events Found
     </div>
   </div>
 </template>
