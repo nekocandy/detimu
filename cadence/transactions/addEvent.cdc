@@ -14,13 +14,12 @@ transaction(
     }
 
     execute {
-        EventStore.addTicket(
+        EventsStore.addEvent(
             uniqueId: uniqueId,
-            ownerAddress: ownerAddress,
-            artistAddress: artistAddress,
             name: name,
             price: price,
             quantity: quantity,
+            address: ownerAddress,
             artists: artists
         )
     }

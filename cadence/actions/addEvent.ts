@@ -18,11 +18,13 @@ export async function addEvent(
       arg(ownerAddress, t.Address),
       arg(artistAddress, t.Address),
       arg(name, t.String),
-      arg(price, t.UFix64),
+      arg(price.toFixed(2), t.UFix64),
       arg(quantity, t.UInt32),
       arg(artists, t.Array(t.String)),
     ],
   })
+
+  consola.log('Transaction ID:', transactionId)
 
   return transactionId
 }
