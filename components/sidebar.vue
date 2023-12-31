@@ -13,6 +13,10 @@ const PATHS = [
     path: '/explore',
   },
   {
+    name: 'Tickets',
+    path: '/tickets',
+  },
+  {
     name: 'Create',
     path: '/create',
   },
