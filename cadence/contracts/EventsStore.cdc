@@ -1,4 +1,4 @@
-pub contract Events {
+pub contract EventsStore {
     pub let events: [TicketEvent]
 
     pub struct Ticket {

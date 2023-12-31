@@ -32,4 +32,6 @@ config({
   'accessNode.api': fclConfigInfo[network].accessNode,
   'discovery.wallet': fclConfigInfo[network].discoveryWallet,
   'discovery.authn.include': fclConfigInfo[network].discoveryAuthInclude,
+  '0xNekoCandy': '0xf8d6e0586b0a20c7',
+  '0xNFTAddress': '0xf8d6e0586b0a20c7',
 }).load({ flowJSON })

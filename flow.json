@@ -1,6 +1,7 @@
 {
   "contracts": {
-    "Events": "./cadence/contracts/events.cdc"
+    "EventsStore": "./cadence/contracts/EventsStore.cdc",
+    "TicketsNFT": "./cadence/contracts/TicketsNFT.cdc"
   },
   "networks": {
     "emulator": "127.0.0.1:3569",
@@ -17,7 +18,8 @@
   "deployments": {
     "emulator": {
       "emulator-account": [
-        "Events"
+        "EventsStore",
+        "TicketsNFT"
       ]
     }
   }
