@@ -11,6 +11,7 @@
     "postinstall": "nuxt prepare && husky install"
   },
   "dependencies": {
+    "@faker-js/faker": "^8.3.1",
     "@formkit/auto-animate": "^0.8.1",
     "@next-auth/prisma-adapter": "^1.0.7",
     "@onflow/fcl": "1.10.0-alpha.3",
