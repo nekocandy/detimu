@@ -3,6 +3,21 @@ import { logIn, unauthenticate } from '~/utils/flow/auth'
 
 const router = useRouter()
 
+const PATHS = [
+  {
+    name: 'Home',
+    path: '/',
+  },
+  {
+    name: 'Explore',
+    path: '/explore',
+  },
+  {
+    name: 'Create',
+    path: '/create',
+  },
+]
+
 async function handleUserAuth() {
   if (userData.value?.addr)
     unauthenticate()
@@ -24,11 +39,18 @@ watch(userData, (newValue, oldValue) => {
 <template>
   <div flex flex-col items-center justify-between bg-zinc-200 gap-4 px-8 py-8 h-full w-full>
     <div>
-      <h1>This Thing</h1>
+      <h1 text-4xl font-black font-serif flex items-center gap-4>
+        <div i-noto-wilted-flower />
+        <span>Detimu</span>
+      </h1>
     </div>
 
-    <div>
-      hi
+    <div flex flex-col gap-4>
+      <div v-for="path in PATHS" :key="path.name" text-center text-2xl uppercase flex flex-col gap-4 text-black>
+        <NuxtLink :to="path.path" class="w-full px-8 py-1 truncate">
+          {{ path.name }}
+        </NuxtLink>
+      </div>
     </div>
 
     <div w-full>
