@@ -8,7 +8,7 @@
       <Sidebar />
     </div>
 
-    <div flex-1 h-full w-full col-span-10>
+    <div flex-1 h-full w-full col-span-10 px-4 py-8>
       <slot />
     </div>
   </div>
