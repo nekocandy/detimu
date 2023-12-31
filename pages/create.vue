@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { addEvent } from '@/cadence/actions/addEvent'
+import { generateTxnURL } from '@/utils/flow/index'
 
 const uniqueId = nanoid()
 const name = ref('')
 const price = ref(1)
 const quantity = ref(20)
 const artists = ref('')
-const transactionId = ref(null)
+const transactionId = ref<string | null>(null)
 
 async function createEvent() {
   if (!name.value || !price.value || !quantity.value || !artists.value) {
@@ -16,7 +17,7 @@ async function createEvent() {
   }
 
   const artistsArray = artists.value.split(',').map(artist => artist.trim())
-  const data = await addEvent(
+  const returnedTransactionId = await addEvent(
     uniqueId,
     userData.value?.addr || '',
     userData.value?.addr || '',
@@ -26,9 +27,11 @@ async function createEvent() {
     artistsArray,
   )
 
-  consola.info('data', data)
+  consola.info('data', returnedTransactionId)
 
-  if (data) {
+  if (returnedTransactionId) {
+    transactionId.value = returnedTransactionId
+
     // eslint-disable-next-line no-alert
     alert('Event created successfully')
   }
@@ -77,10 +80,12 @@ async function createEvent() {
 
     <div v-if="transactionId">
       <h1 text-3xl uppercase font-black>
-        Transaction ID
+        Transaction Completed, Concert Information live on FLOW Blockchain!
       </h1>
       <p>
-        {{ transactionId }}
+        <NuxtLink underline hover="underline-double" :to="generateTxnURL(transactionId)" target="_blank">
+          View Transaction | ID: {{ transactionId }}
+        </NuxtLink>
       </p>
     </div>
   </div>

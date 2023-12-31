@@ -35,3 +35,5 @@ config({
   '0xNekoCandy': '0xf8d6e0586b0a20c7',
   '0xNFTAddress': '0xf8d6e0586b0a20c7',
 }).load({ flowJSON })
+
+export const generateTxnURL = (txnId: string) => `https://testnet.flowdiver.io/tx/${txnId}`
