@@ -6,11 +6,11 @@ export default defineNuxtConfig({
   ssr: false,
   app: {
     head: {
-      title: 'opinionated nuxt',
+      title: 'Detimu',
       meta: [
         {
           name: 'description',
-          content: 'an opinionated nuxt starter template',
+          content: 'Decentralized ticketing for music concerts',
         },
       ],
       link: [

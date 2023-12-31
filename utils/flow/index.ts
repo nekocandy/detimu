@@ -26,7 +26,7 @@ const fclConfigInfo = {
 }
 
 config({
-  'app.detail.title': 'Ticketing',
+  'app.detail.title': 'Detimu',
   'app.detail.icon': 'https://em-content.zobj.net/source/whatsapp/352/ticket_1f3ab.png',
   'flow.network': network,
   'accessNode.api': fclConfigInfo[network].accessNode,
