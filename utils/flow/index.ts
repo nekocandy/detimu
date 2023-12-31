@@ -5,7 +5,7 @@ import flowJSON from '../../flow.json'
 export const network: 'mainnet' | 'testnet' | 'emulator' = (env.PUBLIC_FLOW_NETWORK as
   | 'mainnet'
   | 'testnet'
-  | 'emulator') || 'emulator'
+  | 'emulator') || 'testnet'
 
 const fclConfigInfo = {
   emulator: {
@@ -32,8 +32,8 @@ config({
   'accessNode.api': fclConfigInfo[network].accessNode,
   'discovery.wallet': fclConfigInfo[network].discoveryWallet,
   'discovery.authn.include': fclConfigInfo[network].discoveryAuthInclude,
-  '0xNekoCandy': '0xf8d6e0586b0a20c7',
-  '0xNFTAddress': '0xf8d6e0586b0a20c7',
+  '0xNekoCandy': '0x222051dbc0200615',
+  '0xNFTAddress': '0x222051dbc0200615',
 }).load({ flowJSON })
 
 export const generateTxnURL = (txnId: string) => `https://testnet.flowdiver.io/tx/${txnId}`
