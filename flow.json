@@ -1,4 +1,7 @@
 {
+  "contracts": {
+    "Events": "./cadence/contracts/events.cdc"
+  },
   "networks": {
     "emulator": "127.0.0.1:3569",
     "mainnet": "access.mainnet.nodes.onflow.org:9000",
@@ -9,6 +12,13 @@
     "emulator-account": {
       "address": "f8d6e0586b0a20c7",
       "key": "48a10ae858235c7886c67e3aaa19340ee38ccd54014b8f6de60eec652834fbcb"
+    }
+  },
+  "deployments": {
+    "emulator": {
+      "emulator-account": [
+        "Events"
+      ]
     }
   }
 }

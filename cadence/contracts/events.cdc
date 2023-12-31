@@ -44,8 +44,8 @@ pub contract Events {
     }
 
 
-    pub fun addEvent(name: String, price: UFix64, quantity: UInt32, address: Address, artists: [String]) {
-        let event = TicketEvent(name: name, price: price, quantity: quantity, address: address, artists: artists)
+    pub fun addEvent(uniqueId: String, name: String, price: UFix64, quantity: UInt32, address: Address, artists: [String]) {
+        let event = TicketEvent(uniqueId: uniqueId, name: name, price: price, quantity: quantity, address: address, artists: artists)
         self.events.append(event)
     }
 
@@ -101,10 +101,10 @@ pub contract Events {
         return nil
     }
 
-    pub addTicketFromEventId(eventId: String, uniqueId: String, ownerAddress: Address, artistAddress: Address) {
-        for event in self.events {
-            if event.uniqueId == eventId {
-                event.addTicket(uniqueId: uniqueId, ownerAddress: ownerAddress, artistAddress: artistAddress)
+    pub fun createTicketOnEventId(eventId: String, ticketId: String, ownerAddress: Address, artistAddress: Address) {
+        for currentEvent in self.events {
+            if currentEvent.uniqueId == eventId {
+                currentEvent.addTicket(uniqueId: ticketId, ownerAddress: ownerAddress, artistAddress: artistAddress)
             }
         }
     }
